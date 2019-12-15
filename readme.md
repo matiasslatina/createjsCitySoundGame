@@ -5,6 +5,7 @@
 
 CreatejsCitySoundGame es un desarrollo utilizando las librerías CreateJs. 
 Puntualmente se implementa easeljs y soundjs.
+Se trata de un juego para niños donde podrán observar el movimento de una ciudad e interactuar experimetando on sus sonidos.
 
 [VER DEMO](https://matiaslatina.com.ar/citySoundsGame)
 
