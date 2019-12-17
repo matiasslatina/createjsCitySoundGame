@@ -14,7 +14,7 @@
  * @class Vehicle
  * @extends {Image}
  */
-class Vehicle extends Image{
+export default class Vehicle extends Image{
 
     bitmap;
     

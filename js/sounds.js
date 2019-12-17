@@ -11,7 +11,8 @@
  * Registra los archivos desonido mediante createjs.Sound.registerSound
  *
  */
-function registrerAllSounds(){
+
+export function registrerAllSounds(){
     createjs.Sound.alternateExtensions = ["mp3"];
     createjs.Sound.registerSound({src:"assets/sounds/traffic.mp3", id:"traffic"});
     createjs.Sound.registerSound({src:"assets/sounds/claxon.mp3", id:"claxon"});
@@ -19,22 +20,23 @@ function registrerAllSounds(){
     createjs.Sound.registerSound({src:"assets/sounds/dog.mp3", id:"dog"});
 }
 
-function claxonPlaySound(){
-    context.resume();
+export function claxonPlaySound(){
+    
     createjs.Sound.play("claxon");
 }
 
-function airplanePlayFlySound(){
-    context.resume();
+export function airplanePlayFlySound(){
+    
     createjs.Sound.play("airplane");
 }
 
-function trafficPlaySound(){    
-    context.resume();
+export function trafficPlaySound(){    
+    
     createjs.Sound.play("traffic");
 }
 
-function dogPlaySound(){
-    context.resume();
+export function dogPlaySound(){
+    
     createjs.Sound.play("dog");
 }
+

@@ -8,7 +8,7 @@
 * v1 – creación
 */
 
-class Button extends Image{
+export default class Button extends Image{
 
     bitmap;
 

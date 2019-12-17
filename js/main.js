@@ -8,6 +8,10 @@
 * v1 – creación
 */
 
+import Button from "./Button.js";
+import Vehicle from "./Vehicle.js";
+import * as Sounds from "./sounds.js";
+
 window.addEventListener("load",function(){
     context = new AudioContext();
     main();
@@ -62,7 +66,7 @@ function main(){
     imageDog.src = "assets/img/perro.png";
     imageDog.onload = handleImageLoadDog;
 
-    registrerAllSounds();
+    Sounds.registrerAllSounds();
 
     createjs.Ticker.addEventListener('tick', iniciarTrafico);
  
@@ -100,33 +104,33 @@ function handleButtonLoadClaxon(event) {
     var image = event.target;
     buttonPlayClaxon.bitmap = createBitmap(image);
     buttonPlayClaxon.bitmap.cursor = "pointer";
-    buttonPlayClaxon.bitmap.addEventListener('click', claxonPlaySound);
+    buttonPlayClaxon.bitmap.addEventListener('click', Sounds.claxonPlaySound);
 }
 
 function handleButtonLoadCars(event) {
     var image = event.target;
     buttonPlayCars.bitmap = createBitmap(image);
     buttonPlayCars.bitmap.cursor = "pointer";
-    buttonPlayCars.bitmap.addEventListener('click', trafficPlaySound);
+    buttonPlayCars.bitmap.addEventListener('click', Sounds.trafficPlaySound);
 }
 
 function handleButtonLoadAirplane(event) {
     var image = event.target;
     buttonPlayAirplane.bitmap = createBitmap(image);
     buttonPlayAirplane.bitmap.cursor = "pointer";
-    buttonPlayAirplane.bitmap.addEventListener('click', airplanePlayFlySound);
+    buttonPlayAirplane.bitmap.addEventListener('click', Sounds.airplanePlayFlySound);
 }
 
 function handleButtonLoadDog(event) {
     var image = event.target;
     buttonPlayDog.bitmap = createBitmap(image);
     buttonPlayDog.bitmap.cursor = "pointer";
-    buttonPlayDog.bitmap.addEventListener('click', dogPlaySound);
+    buttonPlayDog.bitmap.addEventListener('click', Sounds.dogPlaySound);
 }
 
 function handleImageLoadDog(event) {
     var image = event.target;
-    bitmap6 = new createjs.Bitmap(image);
+    var bitmap6 = new createjs.Bitmap(image);
     bitmap6.scale= 0.08;
     bitmap6.x = 589;
     bitmap6.y = 172;
@@ -142,8 +146,8 @@ function iniciarTrafico(){
         start=true;
     }
     car1.going(10,-1000,stage);
-    car2.going(15,-120,stage);
-    car3.going(15,-120, stage);
+    car2.going(12,-550,stage);
+    car3.going(12,-550, stage);
     airplane.flying(4,-100,stage);
     stage.update();
 }
